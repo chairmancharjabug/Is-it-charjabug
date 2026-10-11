@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IS IT CHARJABUG?</title>
+  <style>
+    :root {
+      --bg-dark: #121813;
+      --bg-card: #1c261e;
+      --bug-green-dark: #2b4d1b;
+      --bug-green-main: #5b8f2d;
+      --bug-green-light: #8bc34a;
+      --electric-yellow: #f1ca38;
+      --electric-orange: #ff9800;
+      --text-light: #ecf0f1;
+      --text-muted: #95a5a6;
+      --danger-red: #e74c3c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      overflow-x: hidden;
+    }
+
+    /* HEADER TITLE STYLING */
+    header {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h1.game-title {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--electric-yellow);
+      background: linear-gradient(180deg, #fff3a1 0%, var(--electric-yellow) 50%, #d4a017 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
+      filter: drop-shadow(0 0 12px rgba(91, 143, 45, 0.6));
+      padding: 0 10px;
+    }
+
+    .subtitle {
+      color: var(--bug-green-light);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-top: 4px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    /* SCOREBOARD TRACKER */
+    .stats-bar {
+      width: 100%;
+      background: var(--bg-card);
+      border: 2px solid var(--bug-green-dark);
+      border-radius: 12px;
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--electric-yellow);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* GAMEPLAY AREA */
+    .game-card {
+      width: 100%;
+      background: var(--bg-card);
+      border: 2px solid var(--bug-green-main);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    /* SPRITE & BATTERY METERS */
+    .display-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+      width: 100%;
+      position: relative;
+    }
+
+    .sprite-box {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .charjabug-sprite {
+      max-width: 130px;
+      max-height: 130px;
+      image-rendering: pixelated;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+      transition: transform 0.2s ease;
+    }
+
+    /* BATTERY GAUGE */
+    .battery-container {
+      width: 80%;
+      max-width: 280px;
+      height: 20px;
+      background: #0d120e;
+      border: 2px solid var(--bug-green-main);
+      border-radius: 10px;
+      padding: 2px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .battery-fill {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, #8bc34a, #
